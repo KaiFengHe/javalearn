@@ -1,5 +1,7 @@
-package com.hekaifeng.autotest.utgen.core;
+package com.pingan.devtools.generate.testcase;
 
+
+import static com.pingan.devtools.generate.testcase.util.Formats.*;
 
 /**
  * Created by yuxiangshi on 2018/1/5.

@@ -20,4 +20,6 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version='2017.3'
+//    注释
+    updateSinceUntilBuild = false
 }

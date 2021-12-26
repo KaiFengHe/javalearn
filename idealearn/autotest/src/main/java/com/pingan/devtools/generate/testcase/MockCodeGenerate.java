@@ -1,16 +1,18 @@
-package com.hekaifeng.autotest.utgen.core;
+package com.pingan.devtools.generate.testcase;
 
 
 import com.google.common.base.CharMatcher;
-import com.hekaifeng.autotest.utgen.core.util.IoUtil;
-import com.hekaifeng.autotest.utgen.core.util.StrKit;
-import com.hekaifeng.autotest.utgen.core.util.Tuple;
+import com.pingan.devtools.generate.testcase.util.IoUtil;
+import com.pingan.devtools.generate.testcase.util.StrKit;
+import com.pingan.devtools.generate.testcase.util.Tuple;
 
 import java.io.File;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import static com.pingan.devtools.generate.testcase.util.Formats.*;
 
 
 /**

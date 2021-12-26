@@ -1,17 +1,16 @@
-package com.hekaifeng.autotest.utgen.core;
+package com.pingan.devtools.generate.testcase;
 
 
 import com.google.common.base.CharMatcher;
-import com.hekaifeng.autotest.utgen.core.data.PrimitiveType;
-import com.hekaifeng.autotest.utgen.core.data.WrapperType;
-import com.hekaifeng.autotest.utgen.core.dependency.MethodDependency;
-import com.hekaifeng.autotest.utgen.core.dependency.MethodDependencyViaBytecode;
-import com.hekaifeng.autotest.utgen.core.model.ClassInfo;
-import com.hekaifeng.autotest.utgen.core.model.GenerateStatus;
-import com.hekaifeng.autotest.utgen.core.util.IoUtil;
-import com.hekaifeng.autotest.utgen.core.util.StrKit;
-import com.hekaifeng.autotest.utgen.core.util.Tuple;
-import com.hekaifeng.autotest.utgen.ui.MockSelectDialog;
+import com.pingan.devtools.generate.testcase.data.PrimitiveType;
+import com.pingan.devtools.generate.testcase.data.WrapperType;
+import com.pingan.devtools.generate.testcase.dependency.MethodDependency;
+import com.pingan.devtools.generate.testcase.dependency.MethodDependencyViaBytecode;
+import com.pingan.devtools.generate.testcase.model.ClassInfo;
+import com.pingan.devtools.generate.testcase.model.GenerateStatus;
+import com.pingan.devtools.generate.testcase.util.IoUtil;
+import com.pingan.devtools.generate.testcase.util.StrKit;
+import com.pingan.devtools.generate.testcase.util.Tuple;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -22,6 +21,8 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import static com.pingan.devtools.generate.testcase.util.Formats.*;
 
 
 /**
@@ -300,7 +301,8 @@ public final class TestClassCodeGenerate extends AbstractCodeGenerate {
                                 }
                                 addMethodDependencies.put(md1, methodDependencies.get(md1));
                             }
-                            List<List<String>> selectedMockMethods = openMockSelectionDialog(c.toString(), addMethodDependencies);
+                            List<List<String>> selectedMockMethods = new ArrayList<>();
+//                                    openMockSelectionDialog(c.toString(), addMethodDependencies);
 
                             List<String> currentMethodPath = new ArrayList<>();
                             for (Method md : methodDependencies.keySet()) {
@@ -774,13 +776,13 @@ public final class TestClassCodeGenerate extends AbstractCodeGenerate {
         }
     }
 
-    private List<List<String>> openMockSelectionDialog(String className, Map<Method, Map<Class, List<Method>>> methodDependencies) {
-        MockSelectDialog dialog = new MockSelectDialog(className, methodDependencies);
-        dialog.pack();
-        dialog.setSize(1200, 500);
-        dialog.setLocationRelativeTo(null);
-        dialog.setVisible(true);
-        return dialog.getSelectedMethods();
-    }
+//    private List<List<String>> openMockSelectionDialog(String className, Map<Method, Map<Class, List<Method>>> methodDependencies) {
+//        MockSelectDialog dialog = new MockSelectDialog(className, methodDependencies);
+//        dialog.pack();
+//        dialog.setSize(1200, 500);
+//        dialog.setLocationRelativeTo(null);
+//        dialog.setVisible(true);
+//        return dialog.getSelectedMethods();
+//    }
 
 }

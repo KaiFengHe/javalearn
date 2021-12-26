@@ -1,12 +1,15 @@
 <idea-plugin>
     <id>org.example.autotest-plugin</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>autotest</name>
+    <vendor email="417984079@qq.com" url="http://baoxian.pingan.com/">平安保险</vendor>
+    <idea-version since-build="171.0"></idea-version>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    <description><![CDATA[ <ul>
+        <li>这是一个可以快速生成测试用例的单测插件，能够帮助你快速完成单测用例书写</li>
+        <li>这是一个可以快速生成测试用例的单测插件，能够帮助你快速完成单测用例书写</li>
+        <li>这是一个可以快速生成测试用例的单测插件，能够帮助你快速完成单测用例书写</li>
+        <li>这是一个可以快速生成测试用例的单测插件，能够帮助你快速完成单测用例书写</li>
+    </ul ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->

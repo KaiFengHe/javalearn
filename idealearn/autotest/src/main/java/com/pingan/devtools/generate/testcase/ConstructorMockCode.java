@@ -1,7 +1,7 @@
-package com.hekaifeng.autotest.utgen.core;
+package com.pingan.devtools.generate.testcase;
 
 
-import com.hekaifeng.autotest.utgen.core.util.StrKit;
+import com.pingan.devtools.generate.testcase.util.StrKit;
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.NotFoundException;
@@ -9,6 +9,8 @@ import javassist.NotFoundException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.regex.Pattern;
+
+import static com.pingan.devtools.generate.testcase.util.Formats.*;
 
 /**
  * Created by yuxiangshi on 2018/1/5.
