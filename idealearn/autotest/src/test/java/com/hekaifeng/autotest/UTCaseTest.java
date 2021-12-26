@@ -16,10 +16,10 @@ public class UTCaseTest {
     @Test
     public void testUTCase() throws Exception {
         String projectPath = System.getProperty("user.dir");
-        projectPath = "E:\\javaprojects\\playground-master";
+//        projectPath = "E:\\javaprojects\\playground-master";
         String localRepoPath = "";
         localRepoPath = MavenUtil.getLocalRepoPath();
-        String selectGenPath = "E:\\javaprojects\\playground-master\\demo\\src\\main\\java\\com\\example\\demo\\entity";
+        String selectGenPath = "E:\\javaprojects\\javalearn\\idealearn\\autotest\\src\\main\\java\\com\\pingan\\devtools\\generate\\testcase\\model";
 
         Set<String> classes = new HashSet<>();
         String root = ProjectFileUtil.getSourceRootForFile(selectGenPath, projectPath);
