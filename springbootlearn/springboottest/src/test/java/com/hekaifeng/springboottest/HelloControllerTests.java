@@ -20,21 +20,16 @@ class HelloControllerTests {
     @Autowired
     private MockMvc mvc;
 
-//    @MockBean
-//    private HelloService helloService;
-//
-//    @Test
-//    void testExample() throws Exception {
-//        given(this.helloService.sayHello("hkf"))
-//                .willReturn("sayMockHello");
-//        this.mvc.perform(get("/sayHello").param("name","hkf").accept(MediaType.TEXT_PLAIN))
-//                .andExpect(status().isOk()).andExpect(content().string("sayMockHello"));
-//    }
+    @MockBean
+    private HelloService helloService;
 
     @Test
-    public void testExample1() throws Exception {
-        this.mvc.perform(get("/sayHello").param("name", "hkf").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk()).andExpect(content().string("sayHelloHkf"));
+    void testExample() throws Exception {
+        given(this.helloService.sayHello("hkf"))
+                .willReturn("sayMockHello");
+        this.mvc.perform(get("/sayHello").param("name","hkf").accept(MediaType.TEXT_PLAIN))
+                .andExpect(status().isOk()).andExpect(content().string("sayMockHello"));
     }
+
 
 }
