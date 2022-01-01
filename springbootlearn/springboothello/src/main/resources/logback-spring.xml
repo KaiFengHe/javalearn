@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+    <!--log.path定义的是局部变量，./logs指定的是相对路径下的文件夹logs-->
+    <property name="log.path" value="logs"/>
+
+    <appender name="ROLLING-FILE-OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <!--这里的文件名是不能使用正则表达式，只能是定死的名字，实现了很久-->
+        <file>${log.path}/errorlog.log</file>
+
+        <!-- 日志输出格式：%d表示日期时间，%thread表示线程名，%-5level：级别从左显示5个字符宽度
+             %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 %msg：日志消息，%n是换行符 -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 每天日志归档路径以及格式，可以不使用log后缀，%i：当文件大小超过maxFileSize时，按照i进行文件滚动，i从0开始滚动 -->
+            <FileNamePattern>${log.pat h}/errorlog.%d{yyyyMMdd}.log.%i.gz</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>4096MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>365</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 日志级别-->
+    <root level="debug">
+        <appender-ref ref="ROLLING-FILE-OUT"/>
+    </root>
+
+</configuration>
